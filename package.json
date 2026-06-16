@@ -1,0 +1,10 @@
+{
+  "name": "bonsai",
+  "version": "0.1.0",
+  "description": "Bonsai mode for AI agents. The best code is the code you never grew.",
+  "keywords": ["claude-code", "codex", "skills", "bonsai", "yagni"],
+  "license": "MIT",
+  "scripts": {
+    "test": "node scripts/check-rule-copies.js && node --test tests/*.test.js"
+  }
+}

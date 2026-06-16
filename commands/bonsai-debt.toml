@@ -1,0 +1,4 @@
+description = "Harvest every bonsai: shortcut comment in the repo into a debt ledger."
+prompt = """
+Invoke the `bonsai-debt` skill: scan the repo for `bonsai:` comment markers, list one ledger row per marker grouped by file, tag any marker with no regrow trigger as `no-trigger`, and end with the `<N> markers, <M> with no trigger.` total. Report only — change nothing unless the user asks to persist it.
+"""

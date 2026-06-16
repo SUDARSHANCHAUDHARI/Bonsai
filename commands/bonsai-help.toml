@@ -1,0 +1,4 @@
+description = "Quick reference for the bonsai commands and levels."
+prompt = """
+Invoke the `bonsai-help` skill and print its reference. Change nothing.
+"""

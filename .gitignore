@@ -1,0 +1,33 @@
+# Node
+node_modules/
+dist/
+
+# Bonsai runtime state
+.bonsai-active
+
+# Secrets / env — never commit (keep the example)
+.env
+.env.*
+!.env.example
+*.env
+secrets.*
+credentials.*
+
+# User/plugin + Claude Code local config — personal data, never commit
+.claude-plugin-config.json
+.claude/
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

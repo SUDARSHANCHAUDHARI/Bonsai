@@ -1,0 +1,9 @@
+{
+  "name": "bonsai",
+  "version": "0.1.0",
+  "description": "Bonsai mode for AI agents. Forces the smallest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
+  "author": {
+    "name": "Sudarshan",
+    "url": "https://github.com/SUDARSHANCHAUDHARI"
+  }
+}

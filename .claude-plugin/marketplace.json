@@ -1,0 +1,14 @@
+{
+  "name": "bonsai",
+  "owner": {
+    "name": "Sudarshan",
+    "url": "https://github.com/SUDARSHANCHAUDHARI"
+  },
+  "plugins": [
+    {
+      "name": "bonsai",
+      "source": "./",
+      "description": "Bonsai mode: the smallest solution that actually works."
+    }
+  ]
+}

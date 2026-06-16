@@ -1,0 +1,4 @@
+description = "Review the current diff for over-engineering and hand back a delete-list."
+prompt = """
+Invoke the `bonsai-review` skill and apply it to the current diff (`git diff`, or the staged diff if nothing is unstaged). Output one line per finding in the skill's format and end with the `net: -N lines possible.` total. List only — do not apply the cuts.
+"""

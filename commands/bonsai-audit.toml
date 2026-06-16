@@ -1,0 +1,4 @@
+description = "Audit the whole repo for over-engineering, not just the diff."
+prompt = """
+Invoke the `bonsai-audit` skill and apply it to the whole repository. Group findings by file in the bonsai-review format, lead with the top 10 by lines saved, and end with `net: -N lines possible across M files.` List only — apply nothing.
+"""

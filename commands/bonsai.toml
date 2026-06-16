@@ -1,0 +1,10 @@
+description = "Set bonsai intensity (lite | full | ultra | off), or report the current level with no argument."
+prompt = """
+The user ran `/bonsai $ARGUMENTS`.
+
+- No argument: report the current bonsai level and the one-line meaning of each level. Do not change anything.
+- `lite` / `full` / `ultra`: switch to that level for the rest of the session and confirm in one line. The mode flag is already persisted by the UserPromptSubmit hook — just acknowledge and apply the new behavior.
+- `off`: stop applying bonsai for the rest of the session.
+
+Then invoke the `bonsai` skill so its ruleset governs this and following responses (unless the argument was `off`).
+"""

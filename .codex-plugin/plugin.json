@@ -1,0 +1,7 @@
+{
+  "name": "bonsai",
+  "version": "0.1.0",
+  "description": "Bonsai mode for Codex. Forces the smallest solution that actually works.",
+  "skills": "./skills",
+  "hooks": "./hooks/hooks.json"
+}
