@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
+    <img src="assets/logo.png" width="300" alt="Bonsai">
+  </picture>
+</p>
+
 <h1 align="center">Bonsai</h1>
 
 <p align="center"><em>Every cut deliberate. Nothing grown that need not grow.</em></p>
