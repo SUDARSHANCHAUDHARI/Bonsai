@@ -9,6 +9,9 @@ core behavior; everything else is a thin adapter that loads it into a given host
 |------|-------|------|
 | Claude Code | `.claude-plugin/`, `commands/`, `hooks/` | Full: session activation, mode tracking, commands, statusline. |
 | Codex | `.codex-plugin/plugin.json`, `hooks/hooks.json`, `hooks/`, `skills/` | Full: same skills + lifecycle hooks for activation and mode tracking. |
+| OpenCode | `.opencode/plugins/bonsai.mjs`, `.opencode/command/`, `hooks/`, `skills/` | Full: server plugin injects the ruleset each turn via `experimental.chat.system.transform` and persists `/bonsai` switches; reuses the shared instruction builder. |
+| pi | `pi-extension/`, `skills/`, `hooks/` | Full: package extension injects the ruleset each turn through the shared builder and registers the `/bonsai` commands. |
+| Gemini CLI | `gemini-extension.json`, `AGENTS.md`, `commands/`, `skills/` | Always-on context via `contextFileName: AGENTS.md`; reuses `commands/*.toml` + `skills/`. |
 | Cursor | `.cursor/rules/bonsai.mdc` | Instruction-only: always-on project rule. |
 | Windsurf | `.windsurf/rules/bonsai.md` | Instruction-only. |
 | Cline | `.clinerules/bonsai.md` | Instruction-only. |

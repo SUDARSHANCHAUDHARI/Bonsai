@@ -9,7 +9,7 @@ providers:
   - anthropic:messages:claude-sonnet-4-6
 
 tests:
-  - vars: { task: "Write a JavaScript email validator." }
+  - vars: { task: "Write a Python email validator." }
   - vars: { task: "Write a JavaScript debounce function." }
   - vars: { task: "Sum a numeric column in a CSV in Python." }
   - vars: { task: "Write a React countdown timer component." }
@@ -17,5 +17,9 @@ tests:
 
 defaultTest:
   assert:
+    # Measurement: records lines of code (always passes).
     - type: javascript
       value: file://loc.js
+    # Gate: fails the row if the generated code is broken.
+    - type: javascript
+      value: file://correctness.js

@@ -12,7 +12,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code">
   <img src="https://img.shields.io/badge/Codex-plugin-111111?style=flat-square" alt="Codex">
-  <img src="https://img.shields.io/badge/adapters-7%20agents-111111?style=flat-square" alt="7 agents">
+  <img src="https://img.shields.io/badge/works%20with-10%20agents-111111?style=flat-square" alt="10 agents">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT">
 </p>
 
@@ -66,6 +66,35 @@ Add the statusline badge when prompted on first run.
 Install the plugin from this repo; it reuses the same `skills/` and
 `hooks/hooks.json`. Restart Codex to pick it up.
 
+### OpenCode
+
+Run OpenCode from a checkout of this repo and add to `opencode.json`:
+
+```json
+{ "plugin": ["./.opencode/plugins/bonsai.mjs"] }
+```
+
+It injects the ruleset every turn at the active level and adds the `/bonsai`
+commands. OpenCode also auto-loads `AGENTS.md`, so the rules hold even without
+the plugin; the plugin adds the `lite/full/ultra/off` switches.
+
+### pi
+
+```bash
+pi install git:github.com/SUDARSHANCHAUDHARI/Bonsai
+```
+
+The package extension injects the ruleset each turn and registers the `/bonsai`
+commands; the `skills/` ship too.
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/SUDARSHANCHAUDHARI/Bonsai
+```
+
+Loads `AGENTS.md` as always-on context and registers the `/bonsai` commands.
+
 ### Instruction-only agents
 
 Cursor, Windsurf, Cline, GitHub Copilot, and Kiro load the always-on ruleset
@@ -107,16 +136,15 @@ Default is `full`.
 
 ## Roadmap
 
-Shipped in 0.1: Claude Code + Codex plugins, five skills/commands, seven
-instruction-only adapters, statusline badge, and a runnable benchmark harness.
+Shipped: Claude Code + Codex + OpenCode + pi + Gemini plugins, five
+instruction-only adapters, five skills/commands, statusline badge, a benchmark
+harness with a runnable **correctness gate** (so a short-but-broken answer can't
+win on size), and `/bonsai-debt save` to write the ledger to `BONSAI-DEBT.md`.
 
 Coming next:
 
-- **Published benchmark numbers** — median LOC / cost / latency across models. Harness is in [`benchmarks/`](benchmarks/) today; results land once the correctness gate below is in.
-- **Correctness gate** — execute the email/debounce/CSV outputs and structurally check React/FastAPI, so a short-but-broken answer can't win on size.
-- **More full-tier adapters** — OpenCode, pi, and Gemini/Antigravity (skills + hooks, not just instructions).
+- **Published benchmark numbers** — median LOC / cost / latency across models. Harness + gate are in [`benchmarks/`](benchmarks/) today; numbers need a real (paid) eval run, recorded in [`benchmarks/results/`](benchmarks/results/).
 - **Statusline auto-setup** — offer to write the `statusLine` config on first run instead of only nudging.
-- **`bonsai-debt` persistence** — one flag to write the ledger straight to `BONSAI-DEBT.md`.
 
 ## Development
 

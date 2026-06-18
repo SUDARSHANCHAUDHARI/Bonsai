@@ -1,15 +1,19 @@
 # Benchmark
 
 Two arms (no skill, bonsai), the everyday tasks from `promptfooconfig.yaml`.
-Code LOC is counted from fenced code blocks by `loc.js`; tokens, cost, and
-latency come from the API via promptfoo.
+Each row is graded on two metrics:
 
-> No published median results yet — that lands in a later release (see the
-> roadmap in the root README). The harness below is real and runnable today.
+- **`loc.js`** — lines of code from fenced blocks (measurement, always passes).
+- **`correctness.js`** — a gate: it runs the generated code (email/debounce/CSV
+  execute; React/FastAPI are structural) and fails the row if it's broken. So
+  "fewer lines" can never be bought with a wrong answer.
+
+Tokens, cost, and latency come from the API via promptfoo.
 
 ## Run
 
-Requires an Anthropic API key and Node.js ≥ 22 (promptfoo's engine constraint):
+Requires an Anthropic API key, Node.js ≥ 22 (promptfoo's engine constraint), and
+`python3` on PATH for the email/CSV checks:
 
 ```bash
 cp ../.env.example ../.env      # add your ANTHROPIC_API_KEY
@@ -18,10 +22,23 @@ npx promptfoo@latest view
 ```
 
 The bonsai arm (`arms/bonsai.js`) prepends the canonical ruleset straight from
-`AGENTS.md`, so the benchmark always tests the same rules the plugin ships.
+`AGENTS.md`, so the benchmark always tests the rules the plugin ships.
 
-## Honesty note
+## Publishing numbers
 
-`loc.js` only measures size — a short but broken answer still scores well on
-LOC. A correctness gate (execute the email/debounce/CSV outputs, structural
-checks for React/FastAPI) is on the roadmap before any numbers are published.
+After a run, record the medians in `results/` using `results/TEMPLATE.md`. There
+are **no published numbers yet** — they need a real (paid) eval against the API,
+so this repo ships the harness, not invented figures. Run it yourself and the
+results are reproducible from this config.
+
+## Verifying the gate without an API key
+
+The gate itself is unit-tested on known-good and known-broken snippets — no key
+needed:
+
+```bash
+node --test correctness.test.js
+```
+
+That proves a working email validator passes and a `return True` validator
+fails, etc., so the gate is trustworthy before you spend a cent on the model run.

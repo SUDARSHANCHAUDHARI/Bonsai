@@ -1,4 +1,8 @@
-description = "Harvest every bonsai: shortcut comment in the repo into a debt ledger."
+description = "Harvest every bonsai: shortcut comment in the repo into a debt ledger. Pass 'save' to write BONSAI-DEBT.md."
 prompt = """
-Invoke the `bonsai-debt` skill: scan the repo for `bonsai:` comment markers, list one ledger row per marker grouped by file, tag any marker with no regrow trigger as `no-trigger`, and end with the `<N> markers, <M> with no trigger.` total. Report only — change nothing unless the user asks to persist it.
+Invoke the `bonsai-debt` skill with arguments: $ARGUMENTS
+
+Scan the repo for `bonsai:` comment markers, list one ledger row per marker grouped by file, tag any marker with no regrow trigger as `no-trigger`, and end with the `<N> markers, <M> with no trigger.` total.
+
+If $ARGUMENTS contains `save`, `write`, or `--write`, also write the full ledger to `BONSAI-DEBT.md` at the repo root (overwrite if it exists) and confirm the path. Otherwise report only and change nothing.
 """

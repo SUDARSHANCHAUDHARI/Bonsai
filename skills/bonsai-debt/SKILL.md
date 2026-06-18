@@ -39,8 +39,25 @@ gets a `no-trigger` tag — those are the ones that silently rot.
 End with `<N> markers, <M> with no trigger.` Nothing found:
 `No bonsai: debt. Clean ledger.`
 
+## Writing the ledger
+
+Default is report-only. If the user passes `save`, `write`, or `--write` (or
+asks to persist it), write the full ledger to `BONSAI-DEBT.md` at the repo root,
+overwriting any existing file, then confirm the path. Use this layout:
+
+```markdown
+# Bonsai debt ledger
+
+_Generated <date>. <N> markers, <M> with no trigger._
+
+## <file>
+- L<line> — <what was cut>. ceiling: <limit>. regrow: <trigger>.
+```
+
+Group rows by file, same as the report. Tag `no-trigger` rows so they stand out.
+Writing the ledger is the only side effect; never edit the source files.
+
 ## Boundaries
 
-Reads and reports only, changes nothing. To persist it, ask and it writes the
-ledger to a file (e.g. `BONSAI-DEBT.md`). One-shot. "stop bonsai-debt" or
-"normal mode" to revert.
+Reads and reports only, unless asked to `save`/`write` the ledger (the one
+permitted side effect). One-shot. "stop bonsai-debt" or "normal mode" to revert.
