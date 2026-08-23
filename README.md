@@ -26,6 +26,18 @@ line to fifty.
 
 The best code is the code you never grew.
 
+## Table of Contents
+
+- [How it works](#how-it-works)
+- [Installation](#installation)
+- [Commands](#commands)
+- [Levels](#levels)
+- [Roadmap](#roadmap)
+- [Development](#development)
+- [Credit](#credit)
+- [License](#license)
+- [About](#about)
+
 ## How it works
 
 Before writing code, the agent stops at the first cut that holds:
