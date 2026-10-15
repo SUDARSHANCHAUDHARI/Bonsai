@@ -31,3 +31,5 @@ credentials.*
 
 # Logs
 *.log
+
+repoguard-results/
