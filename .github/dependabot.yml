@@ -1,0 +1,14 @@
+version: 2
+# Security updates come from the repo setting. github-actions gets version updates;
+# other ecosystems are version-updated by Renovate, so their limit is 0 to avoid duplicate PRs.
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
